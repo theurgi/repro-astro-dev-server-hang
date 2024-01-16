@@ -1,12 +1,12 @@
 ---
-// import { getCollection } from 'astro:content'
+import { getCollection } from 'astro:content'
 
-// import { PostListing } from '@/components'
+import { PostListing } from '@/components'
 import { GridLayout } from '@/layouts'
 
-// const posts = await getCollection('posts')
+const posts = await getCollection('posts')
 ---
 
 <GridLayout title="posts">
-	<!-- {posts.map((post) => <PostListing {post} />)} -->
+	{posts.map((post) => <PostListing {post} />)}
 </GridLayout>

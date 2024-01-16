@@ -1,0 +1,24 @@
+<div>
+	<slot />
+</div>
+
+<style>
+	@import '../../GridLayout.css';
+
+	div {
+		display: grid;
+
+		grid-template-columns:
+			var(--nav-width)
+			1fr
+			var(--nav-width);
+
+		@media (--breakpoint-md) {
+			grid-template-columns: var(--nav-width) 1fr;
+		}
+
+		@media (--breakpoint-sm) {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

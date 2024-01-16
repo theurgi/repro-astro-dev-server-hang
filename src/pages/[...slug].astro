@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content'
+
+import { PostHeading } from '@/components'
+import { GridLayout } from '@/layouts/grid'
+
+export async function getStaticPaths() {
+	const posts = await getCollection('posts')
+
+	return posts.map((post) => ({
+		params: { slug: `posts/${post.slug}` },
+		props: { post },
+	}))
+}
+
+const { post } = Astro.props
+
+const { title } = post.data
+const { Content, remarkPluginFrontmatter } = await post.render()
+
+const minutesRead = remarkPluginFrontmatter.minutesRead
+---
+
+<GridLayout {title}>
+	<PostHeading {title} {minutesRead} />
+	<Content />
+</GridLayout>

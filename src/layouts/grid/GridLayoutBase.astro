@@ -1,0 +1,36 @@
+---
+import './GridLayout.css'
+
+import { Grid, Header, Article, SiteNav, Main } from './components'
+
+import { GlobalLayout } from '@/layouts'
+
+type Props = {
+	title: string
+}
+
+const { title } = Astro.props
+---
+
+<GlobalLayout lang="en" title={`test ${title ? `- ${title}` : ''}`}>
+	<div class="GridLayout">
+		<Header />
+
+		<Grid>
+			<SiteNav />
+
+			<Main>
+				<Article>
+					<slot />
+				</Article>
+			</Main>
+		</Grid>
+	</div>
+</GlobalLayout>
+
+<style>
+	.GridLayout {
+		max-width: var(--layout-max-width);
+		margin: 0 auto;
+	}
+</style>

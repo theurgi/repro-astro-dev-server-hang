@@ -1,0 +1,71 @@
+---
+import type { CollectionEntry } from 'astro:content'
+
+type Props = {
+	post: CollectionEntry<'posts'>
+}
+
+const { post } = Astro.props
+const href = `posts/${post.slug}`
+
+const { title } = post.data
+
+const rendered = await post.render()
+
+const minutesRead = rendered.remarkPluginFrontmatter.minutesRead
+	.split('read')[0]
+	.trim()
+	.split(' ')
+	.join('')
+---
+
+<a {href}>
+	<div class="flex">
+		<div class="title">{title}</div>
+		<div class="time">{minutesRead}</div>
+	</div>
+</a>
+
+<style>
+	a {
+		all: unset;
+		display: block;
+		margin-bottom: 25px;
+		color: var(--foreground-3);
+
+		cursor: pointer;
+		transition: all 0.3s;
+
+		&:hover {
+			color: var(--foreground-5);
+		}
+	}
+
+	.flex {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-end;
+		padding: 5px 0 7px 0;
+		line-height: normal;
+	}
+
+	.title,
+	.date {
+		margin-right: 0.5rem;
+	}
+
+	.title {
+		font-size: var(--font-size-3);
+	}
+
+	.date {
+		font-family: var(--font-family-mono);
+		font-size: var(--font-size-1);
+		color: var(--foreground-1);
+	}
+
+	.time {
+		font-size: var(--font-size-1);
+		color: var(--foreground-2);
+	}
+</style>

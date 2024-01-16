@@ -1,0 +1,18 @@
+:root {
+	--border-radius-1: 0.25rem;
+	--border-radius-2: 0.5rem;
+	--border-radius-3: 1rem;
+	--border-radius-4: 100%;
+
+	--border-width: 1px;
+
+	--border-color-1: hsla(var(--color-hsl-13), 0.1);
+	--border-color-2: hsla(var(--color-hsl-13), 0.2);
+	--border-color-3: hsla(var(--color-hsl-13), 0.4);
+	--border-color-4: hsla(var(--color-hsl-13), 0.8);
+
+	--border-1: var(--border-width) solid var(--border-color-1);
+	--border-2: var(--border-width) solid var(--border-color-2);
+	--border-3: var(--border-width) solid var(--border-color-3);
+	--border-4: var(--border-width) solid var(--border-color-4);
+}

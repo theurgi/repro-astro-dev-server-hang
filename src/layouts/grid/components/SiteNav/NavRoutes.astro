@@ -1,0 +1,48 @@
+---
+import { Link } from '@/components'
+
+const routes = [{ href: '/', text: 'Posts', active: false }]
+
+const activeRoute = Astro.url.pathname
+
+const isPost = activeRoute.startsWith('/posts')
+
+routes.forEach((route) => {
+	if (isPost) {
+		routes[0].active = true
+		return
+	}
+
+	if (route.href === activeRoute) route.active = true
+})
+---
+
+<div class="grid-container">
+	{
+		routes.map(({ href, text, active }) => (
+			<>
+				<div />
+				<div class:list={[{ active }]}>
+					<Link
+						{href}
+						{active}
+						aria-current={active ? 'page' : null}
+						display="block"
+					>
+						{text}
+					</Link>
+				</div>
+			</>
+		))
+	}
+</div>
+
+<style>
+	.grid-container {
+		display: grid;
+		grid-template-rows: repeat(n, auto);
+		grid-template-columns: calc(var(--nav-width) / 3) 1fr;
+		gap: 10px;
+		width: 100%;
+	}
+</style>

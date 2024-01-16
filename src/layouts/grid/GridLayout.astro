@@ -1,0 +1,15 @@
+---
+import './GridLayout.css'
+
+import GridLayoutBase from './GridLayoutBase.astro'
+
+type Props = {
+	title: string
+}
+
+const { title } = Astro.props
+---
+
+<GridLayoutBase {title}>
+	<slot />
+</GridLayoutBase>

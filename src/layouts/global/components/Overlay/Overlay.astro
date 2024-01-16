@@ -1,0 +1,30 @@
+<div id="overlay"></div>
+
+<style>
+	@import '@/layouts/grid/GridLayout.css';
+
+	div {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: var(--overlay-z-index);
+		visibility: hidden;
+		background-color: var(--overlay-background);
+		opacity: 0;
+		transition:
+			visibility 0s 0.2s,
+			opacity 0.2s linear;
+
+		@media (--breakpoint-sm) {
+			&.open {
+				visibility: visible;
+				opacity: 1;
+				transition:
+					visibility 0s,
+					opacity 0.2s linear;
+			}
+		}
+	}
+</style>

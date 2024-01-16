@@ -1,0 +1,24 @@
+{
+	"[astro]": {
+		"editor.defaultFormatter": "astro-build.astro-vscode"
+	},
+	"cSpell.enableFiletypes": ["mdx"],
+	"css.lint.unknownAtRules": "ignore",
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true,
+		"source.fixAll.stylelint": true
+	},
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	"eslint.validate": [
+		"astro",
+		"javascript",
+		"json",
+		"json5",
+		"jsonc",
+		"typescript"
+	],
+	"markdown.extension.toc.updateOnSave": false,
+	"stylelint.validate": ["astro", "css", "postcss"],
+	"typescript.tsdk": "./node_modules/typescript/lib"
+}

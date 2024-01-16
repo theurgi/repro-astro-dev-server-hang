@@ -1,0 +1,59 @@
+@custom-media --breakpoint-lg (min-width: 1036px);
+
+/* 0.85 * article-max-width + nav-width * 2 */
+/* 0.85 * 700 + 440 = 595 + 440 = 1035 */
+@custom-media --breakpoint-md (max-width: 1035px);
+
+/* 0.85 * article-max-width + nav-width */
+/* 0.85 * 700 + 220 = 595 + 220 = 815 */
+@custom-media --breakpoint-sm (max-width: 815px);
+
+:root {
+	/* ───────────────────────────────── Layers ───────────────────────────────── */
+
+	--header-z-index: 1;
+	--overlay-z-index: 2; /* Overlay is a global component */
+	--nav-z-index: 3;
+
+	/* ───────────────────────────────── Layout ───────────────────────────────── */
+
+	--layout-max-width: 1200px;
+
+	/* ───────────────────────────────── Header ───────────────────────────────── */
+
+	--header-height: 130px;
+	--header-items-height: 100%;
+
+	/* ────────────────────────────────── Nav ─────────────────────────────────── */
+
+	--nav-width: 220px;
+	--nav-transition: 0.35s;
+
+	/* ──────────────────────────────── Article ───────────────────────────────── */
+	--article-max-width: 700px;
+	--article-padding-x: 30px;
+	--article-padding-y: var(--header-height);
+}
+
+/* ───────────────────────────── Miscellaneous ────────────────────────────── */
+
+video,
+iframe {
+	display: block;
+}
+
+img,
+iframe,
+video {
+	margin: 0 auto;
+}
+
+video {
+	width: 100%;
+}
+
+div[date] {
+	margin-top: 0.5rem;
+	font-size: var(--font-size-2);
+	color: var(--color-7);
+}

@@ -1,0 +1,22 @@
+---
+import './global.css'
+
+import { Body, Head, HTML, Overlay } from './components'
+import type { HeadProps } from './components'
+
+export type Props = HeadProps & {
+	lang: string
+}
+
+const { lang, title }: Props = Astro.props
+---
+
+<HTML {lang}>
+	<Head {title} />
+
+	<Overlay />
+
+	<Body>
+		<slot />
+	</Body>
+</HTML>

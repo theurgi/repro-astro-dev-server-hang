@@ -1,0 +1,41 @@
+---
+import NavHeader from './NavHeader.astro'
+import NavRoutes from './NavRoutes.astro'
+---
+
+<aside>
+	<nav id="site-nav" aria-label="Site">
+		<NavHeader />
+		<NavRoutes />
+	</nav>
+</aside>
+
+<style>
+	@import '../../GridLayout.css';
+
+	header {
+		height: var(--header-height);
+	}
+
+	nav {
+		position: fixed;
+		top: 0;
+		z-index: var(--nav-z-index);
+		display: flex;
+		flex-direction: column;
+		width: var(--nav-width);
+		height: 100vh;
+		overflow: auto;
+		background-color: var(--background-2);
+
+		@media (--breakpoint-sm) {
+			left: 0;
+			width: 0;
+			transition: width var(--nav-transition);
+
+			&.open {
+				width: var(--nav-width);
+			}
+		}
+	}
+</style>

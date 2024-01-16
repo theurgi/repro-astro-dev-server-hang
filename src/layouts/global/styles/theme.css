@@ -1,0 +1,104 @@
+:root {
+	--color-hsl-1: 0, 0%, 99%;
+	--color-hsl-2: 0, 0%, 98%;
+	--color-hsl-3: 240, 5%, 96%;
+	--color-hsl-4: 240, 6%, 90%;
+	--color-hsl-5: 240, 5%, 84%;
+	--color-hsl-6: 240, 5%, 65%;
+	--color-hsl-7: 240, 5%, 60%;
+	--color-hsl-8: 240, 4%, 46%;
+	--color-hsl-9: 240, 5%, 34%;
+	--color-hsl-10: 240, 4%, 16%;
+	--color-hsl-11: 240, 5%, 12%;
+	--color-hsl-12: 240, 6%, 10%;
+	--color-hsl-13: 240, 10%, 4%;
+
+	--color-1: hsl(var(--color-hsl-1));
+	--color-2: hsl(var(--color-hsl-2));
+	--color-3: hsl(var(--color-hsl-3));
+	--color-4: hsl(var(--color-hsl-4));
+	--color-5: hsl(var(--color-hsl-5));
+	--color-6: hsl(var(--color-hsl-6));
+	--color-7: hsl(var(--color-hsl-7));
+	--color-8: hsl(var(--color-hsl-8));
+	--color-9: hsl(var(--color-hsl-9));
+	--color-10: hsl(var(--color-hsl-10));
+	--color-11: hsl(var(--color-hsl-11));
+	--color-12: hsl(var(--color-hsl-12));
+	--color-13: hsl(var(--color-hsl-13));
+
+	--background-1: var(--color-1);
+	--background-2: var(--color-2);
+	--background-3: var(--color-3);
+	--background-4: var(--color-4);
+
+	--foreground-1: var(--color-6);
+	--foreground-2: var(--color-8);
+	--foreground-3: var(--color-9);
+	--foreground-4: var(--color-10);
+	--foreground-5: var(--color-13);
+
+	--border-color-1: hsla(var(--color-hsl-13), 0.1);
+	--border-color-2: hsla(var(--color-hsl-13), 0.2);
+	--border-color-3: hsla(var(--color-hsl-13), 0.4);
+	--border-color-4: hsla(var(--color-hsl-13), 0.8);
+
+	--border-1: var(--border-width) solid var(--border-color-1);
+	--border-2: var(--border-width) solid var(--border-color-2);
+	--border-3: var(--border-width) solid var(--border-color-3);
+	--border-4: var(--border-width) solid var(--border-color-4);
+
+	--icon-color: var(--foreground-1);
+	--icon-color-hover: var(--foreground-4);
+
+	--link-color: var(--foreground-2);
+	--link-color-hover: var(--foreground-4);
+
+	--header-background-transparency: hsla(var(--color-hsl-2), 0);
+
+	--overlay-background: hsla(var(--color-hsl-12), 0.3);
+
+	& ::selection {
+		background-color: hsla(var(--color-hsl-12), 0.2);
+	}
+
+	& code:not(pre > code) {
+		background-color: var(--background-1);
+	}
+}
+
+:root.dark {
+	--background-1: var(--color-13);
+	--background-2: var(--color-12);
+	--background-3: var(--color-11);
+	--background-4: var(--color-10);
+
+	--foreground-1: var(--color-8);
+	--foreground-2: var(--color-7);
+	--foreground-3: var(--color-6);
+	--foreground-4: var(--color-5);
+	--foreground-5: var(--color-2);
+
+	--border-color-1: hsla(var(--color-hsl-6), 0.1);
+	--border-color-2: hsla(var(--color-hsl-6), 0.2);
+	--border-color-3: hsla(var(--color-hsl-6), 0.4);
+	--border-color-4: hsla(var(--color-hsl-6), 0.8);
+
+	--icon-color: var(--foreground-1);
+	--icon-color-hover: var(--foreground-4);
+
+	--link-color: var(--foreground-1);
+	--link-color-hover: var(--foreground-4);
+
+	--header-background-transparency: hsla(var(--color-hsl-12), 0);
+
+	--overlay-background: hsla(var(--color-hsl-13), 0.65);
+
+	& ::selection {
+		background-color: hsla(var(--color-hsl-2), 0.2);
+	}
+
+	& code:not(pre > code) {
+		background-color: var(--background-3);
+	}
+}

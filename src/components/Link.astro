@@ -1,0 +1,68 @@
+---
+type Props = {
+	href: string
+	alt?: string
+	active?: boolean
+	classes?: string[]
+	display?: 'block' | 'inline' | 'inline-block'
+	external?: boolean
+	prefetch?: boolean
+	[attr: string]: any
+}
+
+const _external = {
+	target: '_blank',
+	rel: 'noopener noreferrer',
+}
+
+const {
+	href,
+	active,
+	classes,
+	display = 'inline',
+	external = false,
+	prefetch = false,
+	...rest
+}: Props = Astro.props
+---
+
+<a
+	class:list={[display, { active }, classes]}
+	{...external && _external}
+	{href}
+	{...prefetch && { rel: 'prefetch' }}
+	{...rest}
+>
+	<slot />
+</a>
+
+<style>
+	a {
+		height: fit-content;
+		color: var(--link-color);
+
+		&:hover {
+			color: var(--link-color-hover);
+		}
+	}
+
+	.active {
+		color: var(--foreground-4);
+	}
+
+	.block {
+		display: block;
+		text-decoration: none;
+	}
+
+	.inline-block {
+		display: inline-block;
+		text-decoration: none;
+	}
+
+	.inline {
+		display: inline-block;
+		text-decoration: underline;
+		text-underline-offset: 3px;
+	}
+</style>
